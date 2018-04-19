@@ -45,7 +45,7 @@ const Cards = (props) => (
       <p>-------------------------------&gt;</p>
       </ReactHover.Trigger>
       <ReactHover.Hover type='hover'>
-        <p id="upperArrowHoverText"> {props.clientInfo} </p>
+        <p id="upperArrowHoverText"> {props.clientInfo.length > 0 ? props.clientInfo : "client additional info is blank"} </p>
       </ReactHover.Hover>
       </ReactHover>
       <br></br>
@@ -55,13 +55,13 @@ const Cards = (props) => (
       <p>&lt;------------------------------</p>
       </ReactHover.Trigger>
       <ReactHover.Hover type='hover'>
-        <p id="lowerArrowHoverText"> {props.serverInfo} </p>
+        <p id="lowerArrowHoverText"> {props.serverInfo.length > 0 ? props.serverInfo : "Server additional info is blank"} </p>
       </ReactHover.Hover>
       </ReactHover>
     </div>
     <Card id="serverCard">
       <h3>Server</h3>
-      <input id="checkBox" type="checkbox"></input>
+      <input id="checkBox" type="checkbox" name={props.id}></input>
       <p><b>ID: </b>{props.id}</p>
       <p><b>Request: </b>{props.request}</p>
       <p><b>Path: </b>{props.serverPath}</p>

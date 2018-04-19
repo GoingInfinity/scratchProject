@@ -18,17 +18,17 @@ class App extends Component {
 
   componentDidMount() {
     console.log('component has mounted')
-    var that = this; 
-    fetch('http://localhost:3000/api/receive')
-      .then(function(response) {
-        response.json()
-          .then(function(data) {
-            console.log(data);
-            that.setState({
-              requests:data
-            })
-          })
-        })
+    // var that = this; 
+    // fetch('http://localhost:3000/api/receive')
+    //   .then(function(response) {
+    //     response.json()
+    //       .then(function(data) {
+    //         console.log(data);
+    //         that.setState({
+    //           requests:data
+    //         })
+    //       })
+    //     })
       }
 
 
@@ -49,7 +49,8 @@ class App extends Component {
       s_path: document.getElementById('s_path').value,
       s_url: document.getElementById('s_url').value,
       s_purpose: document.getElementById('s_purpose').value,
-      s_moreInfo: document.getElementById('s_moreInfo').value
+      s_moreInfo: document.getElementById('s_moreInfo').value,
+      colorBox : {border: "5px solid green"}
     };
 
 
@@ -94,6 +95,7 @@ class App extends Component {
       })
   }
 
+
   hanndleChange() {
     document.getElementById('s_id').value = " ";
     document.getElementById('s_id').value = document.getElementById('id').value; 
@@ -120,7 +122,8 @@ class App extends Component {
                     serverUrl={elem.s_url} 
                     serverPurpose={elem.s_purpose} 
                     serverInfo={elem.s_moreInfo}
-                    remove={this.removeData.bind(this, elem.id)} />);
+                    remove={this.removeData.bind(this, elem.id)} 
+                    color={elem.colorBox}/>);
     });
 
 

@@ -6,15 +6,15 @@ let pg = require('pg');
 let cors = require('cors');
 
 const PORT = 3000;
-// const connectionString = 'postgres://lntjpzrb:WqEJbb3UKzjRlZ9SfCFO7GQ4itHsYl9j@baasu.db.elephantsql.com:5432/lntjpzrb';
-let pool = new pg.Pool ({
-  user: "postgres",
-  database: "ringoyip0901",
-  password: '0901',
-  host: 'localhost',
-  port: 3001, 
-  max: 10,
-});
+const connectionString = 'postgres://lntjpzrb:WqEJbb3UKzjRlZ9SfCFO7GQ4itHsYl9j@baasu.db.elephantsql.com:5432/lntjpzrb';
+// let pool = new pg.Pool ({
+//   user: "postgres",
+//   database: "H",
+//   password: '211435',
+//   host: 'localhost',
+//   port: 5430, 
+//   max: 10,
+// });
 
 let app = express();
 app.use(cors());
@@ -30,18 +30,18 @@ app.use(function(request, response, next) {
 
 
 
-// const pool = new Pool({
-//   // user: 'lntjpzrb',
-//   // database: 'lntjpzrb',  
-//   // password: 'WqEJbb3UKzjRlZ9SfCFO7GQ4itHsYl9j',
-//   // // host: 'localhost',
-//   // port: 5432,  
-//   // max: 10
-//   connectionString: connectionString,
-//   // user: 'lntjpzrb',
-//   // database: 'lntjpzrb',
-//   // password: 'WqEJbb3UKzjRlZ9SfCFO7GQ4itHsYl9j'
-// });
+const pool = new Pool({
+  // user: 'lntjpzrb',
+  // database: 'lntjpzrb',  
+  // password: 'WqEJbb3UKzjRlZ9SfCFO7GQ4itHsYl9j',
+  // // host: 'localhost',
+  // port: 5432,  
+  // max: 10
+  connectionString: connectionString,
+  // user: 'lntjpzrb',
+  // database: 'lntjpzrb',
+  // password: 'WqEJbb3UKzjRlZ9SfCFO7GQ4itHsYl9j'
+});
 
 
 
